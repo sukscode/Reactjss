@@ -1,4 +1,14 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
+import React from "react";
+import ReactDOM from "react-dom";
+const fname = "Alpha";
+const lname = "Alpha";
+//const num = 7;
 
-ReactDOM.render(<h1>Hello World!</h1>, document.getElementById("root"));
+ReactDOM.render(
+  <div>
+    <h1>Hello {fname + " " + lname}!</h1>
+    <h1>Hello {`${fname} ${lname}`}!</h1>
+    <p>My lucky number is {Math.floor(Math.random() * 10)}</p>
+  </div>,
+  document.getElementById("root")
+);
