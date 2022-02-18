@@ -1,19 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-const fname = "Alpha";
-const lname = "Alpha";
-//const num = 7;
-const img = "https://picsum.photos/200";
+const date = new Date();
+const currentTime = date.getHours();
+let greeting;
 const custom = {
-  color: "red",
-  fontSize: "40px",
-  border: "3px solid black"
+  color: ""
 };
 
+if (currentTime < 12) {
+  greeting = "Good Morning";
+  custom.color = "red";
+} else if (currentTime < 18) {
+  greeting = "Good Afternoon";
+  custom.color = "green";
+} else {
+  greeting = "Good Night";
+  custom.color = "blue";
+}
+
 ReactDOM.render(
-  <div>
-    <h1 style={custom}>Hello {fname + " " + lname}!</h1>
-    <img src={img} />
-  </div>,
+  <h1 className="heading" style={custom}>
+    {greeting}
+  </h1>,
   document.getElementById("root")
 );
